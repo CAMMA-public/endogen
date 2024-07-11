@@ -326,16 +326,16 @@
                     Surgical Imagen is a diffusion-based text-to-image generative model designed to create photorealistic surgical images from textual descriptions, specifically using triplet-based textual prompts that include an instrument, an action, and a target (e.g., "clipper clip cystic duct"). This model builds upon the foundational principles of the Imagen framework, which integrates a large language model, a diffusion model, and a super-resolution component to generate high-fidelity images from text inputs.
                     <p><b>Key Features and Capabilities of Surgical Imagen:</b></p>
 <ul><li> 
-    **Text-to-Image Generation**: Surgical Imagen generates realistic surgical images based on text descriptions, capturing the nuances and details required for surgical training and education.
+    <li><b>Text-to-Image Generation</b>: Surgical Imagen generates realistic surgical images based on text descriptions, capturing the nuances and details required for surgical training and education.</li>
 
-<\li><li>**Triplet-Based Prompts**: The model leverages triplet annotations (instrument, action, target) to succinctly describe surgical scenes. This format ensures that the generated images are contextually accurate and semantically meaningful.
+    <li><b>Triplet-Based Prompts</b>: The model leverages triplet annotations (instrument, action, target) to succinctly describe surgical scenes. This format ensures that the generated images are contextually accurate and semantically meaningful.</li>
 
-<\li><li>**Diffusion Model**: By employing a diffusion-based generative approach, Surgical Imagen produces high-quality images that closely resemble real surgical scenarios.
+    <li><b>Diffusion Model</b>: By employing a diffusion-based generative approach, Surgical Imagen produces high-quality images that closely resemble real surgical scenarios.</li>
 
-<\li><li>**Instrument-Based Class Balancing**: To address the imbalance in surgical datasets, where some critical actions or instruments may be underrepresented, Surgical Imagen includes a technique to balance the classes based on the frequency of instruments in the dataset. This improves training convergence and the model's ability to generate diverse and representative images.
+    <li><b>Instrument-Based Class Balancing</b>: To address the imbalance in surgical datasets, where some critical actions or instruments may be underrepresented, Surgical Imagen includes a technique to balance the classes based on the frequency of instruments in the dataset. This improves training convergence and the model's ability to generate diverse and representative images.</li>
 
-<\li><li>**Evaluation and Validation**: The model's effectiveness is validated using a combination of human expert evaluations and automated metrics such as FID (Fréchet Inception Distance) and CLIP (Contrastive Language-Image Pre-Training) scores. These evaluations ensure that the generated images are not only photorealistic but also align well with the input textual prompts.
-</li></ul>
+    <li><b>Evaluation and Validation</b>: The model's effectiveness is validated using a combination of human expert evaluations and automated metrics such as FID (Fréchet Inception Distance) and CLIP (Contrastive Language-Image Pre-Training) scores. These evaluations ensure that the generated images are not only photorealistic but also align well with the input textual prompts.</li>
+</ul>
 
                     
                 </div>
@@ -412,10 +412,6 @@
 
                     </div>
                 </div>
-
-                <h3> Do you have medical knowledge? Do you know about laparoscopic cholecystectomy?
-Can you differentiate AI generated surgical images from the real one? Take the test <a href="#">here !</a>
-                </h3>
                 
             </div>
         </div>
@@ -436,14 +432,6 @@ Can you differentiate AI generated surgical images from the real one? Take the t
                         <h2 class="subtitle has-text-centered">
                             CLipper clip cystic duct
                         </h2>
-                        <audio controls loop>
-                            <!-- Your video file here -->
-                            <source src="static/videos/360_panoramic.mp3"
-                                    type="video/mp4">
-                        </audio>
-                        <h2 class="subtitle has-text-centered">
-                            Example of clipping activity
-                        </h2>
                         <h2>
 
                         </h2>
@@ -457,14 +445,6 @@ Can you differentiate AI generated surgical images from the real one? Take the t
                         <img src="static/images/Mel_360.png" width="80%">
                         <h2 class="subtitle has-text-centered">
                             CLipper clip cystic duct
-                        </h2>
-                        <audio controls loop>
-                            <!-- Your video file here -->
-                            <source src="static/videos/360_panoramic.mp3"
-                                    type="video/mp4">
-                        </audio>
-                        <h2 class="subtitle has-text-centered">
-                            Example of clipping activity
                         </h2>
                         <h2>
 
@@ -492,14 +472,6 @@ Can you differentiate AI generated surgical images from the real one? Take the t
                         <h2 class="subtitle has-text-centered">
                             CLipper clip cystic duct
                         </h2>
-                        <audio controls loop>
-                            <!-- Your video file here -->
-                            <source src="static/videos/360_panoramic.mp3"
-                                    type="video/mp4">
-                        </audio>
-                        <h2 class="subtitle has-text-centered">
-                            Example of clipping activity
-                        </h2>
                         <h2>
 
                         </h2>
@@ -513,14 +485,6 @@ Can you differentiate AI generated surgical images from the real one? Take the t
                         <img src="static/images/Mel_360.png" width="80%">
                         <h2 class="subtitle has-text-centered">
                             CLipper clip cystic duct
-                        </h2>
-                        <audio controls loop>
-                            <!-- Your video file here -->
-                            <source src="static/videos/360_panoramic.mp3"
-                                    type="video/mp4">
-                        </audio>
-                        <h2 class="subtitle has-text-centered">
-                            Example of clipping activity
                         </h2>
                         <h2>
 
@@ -547,99 +511,17 @@ Can you differentiate AI generated surgical images from the real one? Take the t
 
 
 
-<section class="hero is-small is-light" id="download">
+<section class="hero is-small is-light" id="survey">
     <div class="hero-body">
         <div class="container">
-            <h2 class="title is-3">Download </h2>
+            <h2 class="title is-3">Survey </h2>
             <div class="columns is-centered has-text-centered">
                 <div class="column is-four-fifths">
                     <div class="content has-text-justified">
-                        <p>
-                            Our dataset offers a comprehensive collection of panoramic videos, binocular videos, and
-                            third-person videos, each pair of videos accompanied by annotations. Additionally, it
-                            includes features extracted using I3D, VGGish, and ResNet-18.
-                            Given the high-resolution nature of our dataset (5760x2880 for panoramic and binocular
-                            videos, 1920x1080 for third-person front view videos), the overall size is considerably
-                            large. To accommodate diverse research needs and computational resources, we also provide a
-                            lower-resolution version of the dataset (640x320 for panoramic and binocular videos, 569x320
-                            for third-person front view videos) available for download.
-                        </p>
-
-                        <p>
-                            Our full dataset, can be accessed by filling this <a
-                                href="https://docs.google.com/forms/d/e/1FAIpQLSeis3NZQftWrqv5WsUzqzA1lakrQ2nkGIwzHl4_hWKhU2QS7Q/viewform?usp=sf_link"
-                                target="_blank" style="color: #1d72aa">ACCESS FORM </a> and the further instruction will
-                            send to your email address shortly.
-                        </p>
-                        <p>
-                            For easily accessing, the lower-resolution version can be accessed in <a
-                                href="https://huggingface.co/datasets/quchenyuan/360x_dataset"
-                                target="_blank" style="color: #1d72aa">Huggingface🤗</a>
-
-                        </p>
-                        <details>
-                            <summary><b>Dataset Structure</b></summary>
-                            <br>
-                            <div class="tree">
-                                <i class="fa fa-archive"></i> 360x_dataset_original_resolution.zip
-
-                                <ul>
-                                    <li><i class="fa fa-file"></i> index.json</li>
-                                    <li><i class="fa fa-folder-open"></i> panoramic</li>
-                                    <ul>
-                                        <li><i class="fa fa-video"></i> 0000001.mp4</li>
-                                        <li><i class="fa fa-video"></i> 0000002.mp4</li>
-                                        <li>...</li>
-                                    </ul>
-                                    <li><i class="fa fa-folder-open"></i> binocular</li>
-                                    <ul>
-                                        <li><i class="fa fa-video"></i> 0000001.mp4</li>
-                                        <li><i class="fa fa-video"></i> 0000002.mp4</li>
-                                        <li>...</li>
-                                    </ul>
-                                    <li><i class="fa fa-folder-open"></i> third_person</li>
-                                    <ul>
-                                        <li><i class="fa fa-video"></i> 0000001.mp4</li>
-                                        <li><i class="fa fa-video"></i> 0000002.mp4</li>
-                                        <li>...</li>
-                                    </ul>
-                                </ul>
-
-                                <ul>
-                                    <li><i class="fa fa-file"></i> classes.json</li>
-                                    <li><i class="fa fa-folder-open"></i> activity_segmentation</li>
-                                    <ul>
-                                        <li><i class="fa fa-file"></i> 0000001.json</li>
-                                        <li><i class="fa fa-file"></i> 0000002.json</li>
-                                        <li>...</li>
-                                    </ul>
-                                </ul>
-                                <i class="fa fa-archive"></i> 360x_dataset_low_resolution.zip
-                                <ul>
-                                    <li><i class="fa fa-file"></i> index.json</li>
-                                    <li><i class="fa fa-folder-open"></i> panoramic</li>
-                                    <ul>
-                                        <li><i class="fa fa-video"></i> 0000001.mp4</li>
-                                        <li><i class="fa fa-video"></i> 0000002.mp4</li>
-                                        <li>...</li>
-                                    </ul>
-                                    <li><i class="fa fa-folder-open"></i> binocular</li>
-                                    <ul>
-                                        <li><i class="fa fa-video"></i> 0000001.mp4</li>
-                                        <li><i class="fa fa-video"></i> 0000002.mp4</li>
-                                        <li>...</li>
-                                    </ul>
-                                    <li><i class="fa fa-folder-open"></i> third_person</li>
-                                    <ul>
-                                        <li><i class="fa fa-video"></i> 0000001.mp4</li>
-                                        <li><i class="fa fa-video"></i> 0000002.mp4</li>
-                                        <li>...</li>
-                                    </ul>
-                                </ul>
-
-
-                            </div>
-                        </details>
+                        <h3> 
+                            Do you have medical knowledge? Do you know about laparoscopic cholecystectomy?<br />
+                            Can you differentiate AI generated surgical images from the real one? Take the test <a href="#">here !</a>
+                        </h3>
                     </div>
                 </div>
             </div>
@@ -737,21 +619,20 @@ This work was granted access to the servers/HPC resources managed by CAMMA, IHU 
                         </p>
 
                         <h3>This study is evaluated, thanks to the medical and surgical experts:</h3>
-                        <center></center><iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSL6qw9cokBYoe_GbE21KeeXoo38EKnM-TI5fHaj1xJjxZEpUJR0UqMFsGHcwGnVJdeHGucle4vLaj9/pubhtml?gid=11688608&amp;single=true&amp;widget=true&amp;headers=false"></iframe></center>
+                        
+                        <center><iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSL6qw9cokBYoe_GbE21KeeXoo38EKnM-TI5fHaj1xJjxZEpUJR0UqMFsGHcwGnVJdeHGucle4vLaj9/pubhtml?gid=11688608&amp;single=true&amp;widget=true&amp;headers=false"></iframe></center>
 
                         <!-- Repeat for each team member -->
                         <div class="logos" style="padding-bottom: 50px; padding-top: 50px">
                             <!-- Repeat for each logo -->
-                            <a href="https://mix.jianbojiao.com/"><img src="static/images/mix_group.png"
-                                                                       alt="mix_group"/></a>
+                            <a href="https://camma.unistra.fr/"><img src="static/images/camma.png"
+                                                                       alt="CAMMA"/></a>
 
-                            <a href="https://www.baskerville.ac.uk/"><img src="static/images/baskerville.svg"
-                                                                          alt="baskerville"/></a>
-                            <a href="https://www.birmingham.ac.uk/"><img
-                                    src="static/images/UoB_Crest_Logo_RGB_POS_Landscape.png"
-                                    alt="UOB"/></a>
-                            <a href="https://royalsociety.org/grants/short-industry-fellowships/"><img
-                                    src="static/images/royal.png" alt="royal"/></a>
+                            <a href="https://www.ihu-strasbourg.eu/"><img src="static/images/ihu.png"
+                                                                          alt="IHU"/></a>
+                            <a href="https://en.unistra.fr/"><img
+                                    src="static/images/unistra.png"
+                                    alt="Unistra"/></a>
 
                             <!-- Repeat for other logos -->
                         </div>
