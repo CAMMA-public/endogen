@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+    <!-- Replace the content tag with appropriate information -->
+    <meta name="description" content="Surgical Imagen">
+    <meta property="og:title" content="Surgical Imagen"/>
+    <meta property="og:description" content="Surgical Imagen"/>
+    <meta property="og:url" content="https://camma-public.github.io/surgicalimagen"/>
+
+
+    <meta name="twitter:title" content="Surgical Imagen">
+    <meta name="twitter:description" content="Surgical Imagen">
+    <meta name="keywords" content="Surgical Imagen">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <title>Surgical Text-To-Image Generation</title>
+    <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="static/css/bulma.min.css">
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="static/css/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core/index.min.css"/>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+    <script defer src="static/js/fontawesome.all.min.js"></script>
+    <script src="static/js/bulma-carousel.min.js"></script>
+    <script src="static/js/bulma-slider.min.js"></script>
+    <script src="static/js/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core/index.min.js"></script>
+
+    <script src="static/js/video_block.js"></script>
+    <style>
+        #more_example {
+            margin-top: 50px;
+            width: 80rem;
+            max-width: 80vw;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            font-size: 2rem;
+            color: white;
+            background-image: url('./static/images/overall.gif');
+            background-size: cover;
+            padding-top: 12.25%;
+            padding-bottom: 12.25%
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            position: fixed; /* Fixed positioning */
+            top: 0; /* Stick to the top */
+            width: 100%; /* Full width */
+            z-index: 1000; /* Make sure it stays on top of other content */
+        }
+
+        .navbar a, .navbar h1 {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+        }
+
+        .navbar h1 {
+            margin: 0;
+            padding-left: 8px;
+        }
+
+        .navbar-right {
+            display: flex;
+        }
+
+        .hover-underline-animation {
+            display: inline-block;
+            position: relative;
+            color: #0087ca;
+        }
+
+        .hover-underline-animation::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #0087ca;
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+        }
+
+        .hover-underline-animation:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        .team-section {
+            background: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .team-section h2 {
+            font-size: 2em;
+        }
+
+        .member-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 10px;
+        }
+
+        .member {
+            flex: 0 0 30%; /* each member will take up 30% of the container width */
+            margin: 10px;
+            box-sizing: border-box;
+        }
+
+        .member img {
+            border-radius: 50%; /* Makes the images round */
+            width: 100px; /* Adjust as needed */
+            height: 100px; /* Adjust as needed */
+            margin-bottom: 10px;
+            display: block; /* Center image in its container */
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .member p {
+            margin: 5px 0;
+        }
+
+        .logos {
+            margin-top: 20px;
+        }
+
+        .logos img {
+            height: 100px; /* Adjust as needed */
+            margin: 0 10px;
+            vertical-align: middle;
+        }
+
+        @keyframes rotate3D {
+            0% {
+                transform: perspective(500px) rotateY(0deg);
+            }
+            100% {
+                transform: perspective(500px) rotateY(360deg);
+            }
+        }
+
+        .rotating-text-3d {
+            display: inline-block;
+            animation: rotate3D 5s linear infinite;
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+<div class="navbar">
+    <a style="font-size: 2rem"
+       href="#top">
+        <div class="rotating-text-3d"><b><i>Surgical Imagen</i></b></div>
+    </a>
+    <div class="navbar-right">
+        <a href="#example" class="hover-underline-animation">Example</a>
+        <a href="#survey" class="hover-underline-animation">Survey</a>
+        <a href="leaderboard.html" class="hover-underline-animation">Leaderboard</a>
+        <a href="#team" class="hover-underline-animation">Team</a>
+    </div>
+</div>
+
+
+<section class="hero" style="padding-top: 50px">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered">
+                <div class="column has-text-centered">
+
+                    <div class="content">
+                        <h1 class="title is-1 publication-title">Surgical Text-To-Image Generation</h1>
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block"><a href="https://nwoyecid.github.io/" target="_blank">Chinedu Nwoye</a>,</span>
+                            <span class="author-block"><a href="#" target="_blank">Rupak Bose</a></span>,
+                            <span class="author-block"><a href="#" target="_blank">Kareem Elgohary</a></span>,
+                            <span class="author-block"><a href="#" target="_blank">Lorenzo Arboit</a></span>,
+                            <span class="author-block"><a href="#" target="_blank">Giorgio Carlino</a></span>,
+                            <span class="author-block"><a href="#" target="_blank">Joel Lavanchy</a></span>,
+                            <span class="author-block"><a href="#" target="_blank">Pietro Mascagni</a></span>,
+                            <span class="author-block"><a href="https://camma.unistra.fr/npadoy/" target="_blank">Nicolas Padoy</a></span>
+                        </div>
+
+
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block"><a href="https://camma.unistra.fr" target="_blank">Research Group CAMMA</a>, University of Strasbourg</span>
+
+                            <!--<div style="display: flex; justify-content: space-around">
+                                <span class="eql-cntrb" style="font-size: 1.25rem!important"><br><small><a href="https://cvpr.thecvf.com/">The IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 2024</a><p
+                                        style="color:#800519"><b>(Oral Presentation)</b></p></small></span>
+                            </div>-->
+                        </div>
+
+
+                        <div class="column has-text-centered">
+                            <div class="publication-links">
+                                <!-- Arxiv PDF link -->
+                                <span class="link-block">
+                                            <a href="#"
+                                               target="_blank"
+                                               class="external-link button is-normal is-rounded is-dark">
+                                            <span class="icon">
+                                              <i class="fas fa-file-pdf"></i>
+                                            </span>
+                                            <span>Paper</span>
+                                          </a>
+                                        </span>
+
+                                <!-- Supplementary PDF link -->
+                                <span class="link-block">
+                                          <a href="#"
+                                             target="_blank"
+                                             class="external-link button is-normal is-rounded is-dark">
+                                          <span class="icon">
+                                            <i class="fas fa-file-pdf"></i>
+                                          </span>
+                                          <span>Supplementary</span>
+                                        </a>
+                                      </span>
+                                <span class="link-block">
+                                            <a href="#" target="_blank"
+                                               class="external-link button is-normal is-rounded is-dark">
+                                            <span class="icon">
+                                              <i class="ai ai-arxiv"></i>
+                                            </span>
+                                            <span>arXiv</span>
+                                          </a>
+                                        </span>
+
+
+                                <span class="link-block">
+                                            <a href="#survey"
+                                               class="button is-normal is-rounded is-dark">
+                                            <span class="icon">
+                                              <i class="fa fa-archive"></i>
+                                            </span>
+                                            <span>Survey</span>
+                                          </a>
+                                        </span>
+
+                                <span class="link-block">
+                                        <a href="#"
+                                           target="_blank"
+                                           class="external-link button is-normal is-rounded is-dark"
+                                        >
+                                        <span> Leaderboard </span>
+                                      </a>
+                                    </span>
+
+                                <!-- Github link -->
+                                <span class="link-block">
+                                        <a href="https://github.com/CAMMA-public/surgical-imagen"
+                                           target="_blank"
+                                           class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                          <i class="fab fa-github"></i>
+                                        </span>
+                                        <span>Code</span>
+                                      </a>
+                                    </span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="hero teaser">
+    <div class="container">
+        <div class="hero-body">
+            <video poster="" id="tree" muted autoplay loop height="100%">
+                <!-- Your video here -->
+                <source src="static/videos/teaser_video.mp4" type="video/mp4">
+            </video>
+
+        </div>
+    </div>
+</section>
+
+<section class="hero teaser">
+    <div class="container is-max-desktop">
+        <div class="hero-body">
+            <img src="static/images/main_figure.png" height="100%" width="auto">
+        </div>
+    </div>
+</section>
+
+<!-- Paper abstract -->
+
+<section class="section hero is-light">
+    <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+                <h2 class="title is-3">What is Surgical Imagen ?</h2>
+                <div class="content has-text-justified">
+                    <b>Surgical Imagen</b> is a specialized generative model developed to address significant challenges in acquiring high-quality, annotated surgical data for research, training, and development in the medical field, particularly in the domain of laparoscopic surgery. 
+                    <br>
+                    Surgical Imagen is a diffusion-based text-to-image generative model designed to create photorealistic surgical images from textual descriptions, specifically using triplet-based textual prompts that include an instrument, an action, and a target (e.g., "clipper clip cystic duct"). This model builds upon the foundational principles of the Imagen framework, which integrates a large language model, a diffusion model, and a super-resolution component to generate high-fidelity images from text inputs.
+                    <p><b>Key Features and Capabilities of Surgical Imagen:</b></p>
+<ul><li> 
+    **Text-to-Image Generation**: Surgical Imagen generates realistic surgical images based on text descriptions, capturing the nuances and details required for surgical training and education.
+
+<\li><li>**Triplet-Based Prompts**: The model leverages triplet annotations (instrument, action, target) to succinctly describe surgical scenes. This format ensures that the generated images are contextually accurate and semantically meaningful.
+
+<\li><li>**Diffusion Model**: By employing a diffusion-based generative approach, Surgical Imagen produces high-quality images that closely resemble real surgical scenarios.
+
+<\li><li>**Instrument-Based Class Balancing**: To address the imbalance in surgical datasets, where some critical actions or instruments may be underrepresented, Surgical Imagen includes a technique to balance the classes based on the frequency of instruments in the dataset. This improves training convergence and the model's ability to generate diverse and representative images.
+
+<\li><li>**Evaluation and Validation**: The model's effectiveness is validated using a combination of human expert evaluations and automated metrics such as FID (Fréchet Inception Distance) and CLIP (Contrastive Language-Image Pre-Training) scores. These evaluations ensure that the generated images are not only photorealistic but also align well with the input textual prompts.
+</li></ul>
+
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End paper abstract -->
+
+
+<section class="hero is-small" id="example">
+    <div class="hero-body">
+        <div class="container">
+            <h2 class="title is-3">Example Generated Images</h2>
+            <div id="results-carousel" class="carousel results-carousel">
+                <div class="columns is-centered has-text-centered">
+                    <div class="item item-video1">
+                        <video poster="" id="video1" controls loop width="80%">
+                            <!-- Your video file here -->
+                            <source src="static/videos/360_panoramic.mp4"
+                                    type="video/mp4">
+                        </video>
+                        <h2 class="subtitle has-text-centered">
+                            Example of 360° Panoramic Video (temporally cropped to 30s)
+                        </h2>
+                    </div>
+                </div>
+
+                <h2 class="title is-3">Example Generated Clinically Impossible Images</h2>
+                <div class="columns is-centered has-text-centered">
+                    <div class="item item-video2">
+                        <video poster="" id="video2" controls loop width="71%">
+                            <!-- Your video file here -->
+                            <source src="static/videos/front_view.mp4"
+                                    type="video/mp4">
+                        </video>
+                        <h2 class="subtitle has-text-centered">
+                            Example of Front-view Video (temporally cropped to 30s)
+                        </h2>
+                    </div>
+                </div>
+                
+                <h2 class="title is-3">Example Deep Learning Inference on Generated Images</h2>
+                <div class="columns is-centered has-text-centered">
+                    <div class="item item-video2">
+                        <video poster="" id="video2" controls loop width="71%">
+                            <!-- Your video file here -->
+                            <source src="static/videos/front_view.mp4"
+                                    type="video/mp4">
+                        </video>
+                        <h2 class="subtitle has-text-centered">
+                            Example of Front-view Video (temporally cropped to 30s)
+                        </h2>
+                    </div>
+                </div>
+
+                <h3> Do you have medical knowledge? Do you know about laparoscopic cholecystectomy?
+Can you differentiate AI generated surgical images from the real one? Take the test <a href="#">here !</a>
+                </h3>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    fetch('static/images/image_base64.txt')
+        .then(response => response.text())
+        .then(data => {
+            var image_data = data;
+        });
+</script>
+
+
+
+<section class="hero is-small is-light" id="download">
+    <div class="hero-body">
+        <div class="container">
+            <h2 class="title is-3">Download </h2>
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <div class="content has-text-justified">
+                        <p>
+                            Our dataset offers a comprehensive collection of panoramic videos, binocular videos, and
+                            third-person videos, each pair of videos accompanied by annotations. Additionally, it
+                            includes features extracted using I3D, VGGish, and ResNet-18.
+                            Given the high-resolution nature of our dataset (5760x2880 for panoramic and binocular
+                            videos, 1920x1080 for third-person front view videos), the overall size is considerably
+                            large. To accommodate diverse research needs and computational resources, we also provide a
+                            lower-resolution version of the dataset (640x320 for panoramic and binocular videos, 569x320
+                            for third-person front view videos) available for download.
+                        </p>
+
+                        <p>
+                            Our full dataset, can be accessed by filling this <a
+                                href="https://docs.google.com/forms/d/e/1FAIpQLSeis3NZQftWrqv5WsUzqzA1lakrQ2nkGIwzHl4_hWKhU2QS7Q/viewform?usp=sf_link"
+                                target="_blank" style="color: #1d72aa">ACCESS FORM </a> and the further instruction will
+                            send to your email address shortly.
+                        </p>
+                        <p>
+                            For easily accessing, the lower-resolution version can be accessed in <a
+                                href="https://huggingface.co/datasets/quchenyuan/360x_dataset"
+                                target="_blank" style="color: #1d72aa">Huggingface🤗</a>
+
+                        </p>
+                        <details>
+                            <summary><b>Dataset Structure</b></summary>
+                            <br>
+                            <div class="tree">
+                                <i class="fa fa-archive"></i> 360x_dataset_original_resolution.zip
+
+                                <ul>
+                                    <li><i class="fa fa-file"></i> index.json</li>
+                                    <li><i class="fa fa-folder-open"></i> panoramic</li>
+                                    <ul>
+                                        <li><i class="fa fa-video"></i> 0000001.mp4</li>
+                                        <li><i class="fa fa-video"></i> 0000002.mp4</li>
+                                        <li>...</li>
+                                    </ul>
+                                    <li><i class="fa fa-folder-open"></i> binocular</li>
+                                    <ul>
+                                        <li><i class="fa fa-video"></i> 0000001.mp4</li>
+                                        <li><i class="fa fa-video"></i> 0000002.mp4</li>
+                                        <li>...</li>
+                                    </ul>
+                                    <li><i class="fa fa-folder-open"></i> third_person</li>
+                                    <ul>
+                                        <li><i class="fa fa-video"></i> 0000001.mp4</li>
+                                        <li><i class="fa fa-video"></i> 0000002.mp4</li>
+                                        <li>...</li>
+                                    </ul>
+                                </ul>
+
+                                <ul>
+                                    <li><i class="fa fa-file"></i> classes.json</li>
+                                    <li><i class="fa fa-folder-open"></i> activity_segmentation</li>
+                                    <ul>
+                                        <li><i class="fa fa-file"></i> 0000001.json</li>
+                                        <li><i class="fa fa-file"></i> 0000002.json</li>
+                                        <li>...</li>
+                                    </ul>
+                                </ul>
+                                <i class="fa fa-archive"></i> 360x_dataset_low_resolution.zip
+                                <ul>
+                                    <li><i class="fa fa-file"></i> index.json</li>
+                                    <li><i class="fa fa-folder-open"></i> panoramic</li>
+                                    <ul>
+                                        <li><i class="fa fa-video"></i> 0000001.mp4</li>
+                                        <li><i class="fa fa-video"></i> 0000002.mp4</li>
+                                        <li>...</li>
+                                    </ul>
+                                    <li><i class="fa fa-folder-open"></i> binocular</li>
+                                    <ul>
+                                        <li><i class="fa fa-video"></i> 0000001.mp4</li>
+                                        <li><i class="fa fa-video"></i> 0000002.mp4</li>
+                                        <li>...</li>
+                                    </ul>
+                                    <li><i class="fa fa-folder-open"></i> third_person</li>
+                                    <ul>
+                                        <li><i class="fa fa-video"></i> 0000001.mp4</li>
+                                        <li><i class="fa fa-video"></i> 0000002.mp4</li>
+                                        <li>...</li>
+                                    </ul>
+                                </ul>
+
+
+                            </div>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="hero is-small is-light" id="reference">
+    <div class="hero-body">
+        <div class="container">
+            <h2 class="title is-3">Citation</h2>
+            <div class="columns">
+                <div class="column is-four-fifths">
+<pre><code>@inproceedings{nwoye2024surgical,
+  title={Surgical Imagen},
+  author={Chinedu Innocent Nwoye, Rupak Bose, Kareem Elgohary, Lorenzo Arboit, Giorgio Carlino, Joël L. Lavanchy, Pietro Mascagni, Nicolas Padoy},
+  booktitle={arXiv PrePrint},
+  year={2024}
+}</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer" id="team">
+    <div class="container">
+        <div class="columns is-centered">
+            <div class="column is-8">
+                <div class="content">
+
+                    <h2 class="title is-3">Our Team</h2>
+                    <div class="member-container">
+
+
+                        <div class="member">
+                            <a href="https://nwoyecid.github.io/" target="_blank">
+                                <img src="static/images/chinedu.jpg" alt="hao chen">
+                                <p align="center">Chinedu Nwoye</p>
+                            </a>
+                        </div>
+                        <div class="member">
+                            <a href="#" target="_blank">
+                                <img src="static/images/rupak.jpg" alt="yuqi hou">
+                                <p align="center">Rupak Bose</p>
+                            </a>
+                        </div>
+                        <div class="member">
+                            <a href="#" target="_blank">
+                                <img src="static/images/kareem.jpg" alt="chenyuan qu">
+                                <p align="center">Kareem Elgohary</p>
+                            </a>
+                        </div>
+                        <div class="member">
+                            <a href="#"
+                               target="_blank">
+                                <img src="static/images/lorenzo.jpg" alt="Irene Testini">
+                                <p align="center">Lorenzo Arboit</p>
+                            </a>
+                        </div>
+                        <div class="member">
+                            <a href="#" target="_blank">
+                                <img src="static/images/giorgio.jpg" alt="Xiaohan Hong">
+                                <p align="center">Giorgio Carlino</p>
+                            </a>
+                        </div>
+                        <div class="member">
+                            <a href="#" target="_blank">
+                                <img src="static/images/joel.jpg" alt="jianbo">
+                                <p align="center">Joel L Lavanchy</p>
+                            </a>
+                        </div>
+                        
+                        <div class="member">
+                            <a href="#" target="_blank">
+                                <img src="static/images/pietro.jpg" alt="jianbo">
+                                <p align="center">Pietro Mascagni</p>
+                            </a>
+                        </div>
+                        
+                        <div class="member">
+                            <a href="#" target="_blank">
+                                <img src="static/images/nicolas.jpg" alt="jianbo">
+                                <p align="center">Nicolas Padoy</p>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <h2 class="title is-3">Acknowledgement</h2>
+                    <div class="member-container">
+                        <p>
+                            This work was supported by French state funds managed within the Plan Investissements d’Avenir by the ANR under references: National AI Chair AI4ORSafety [ANR-20-CHIA-0029-01], IHU Strasbourg [ANR-10-IAHU-02] and by BPI France [Project 5G-OR]. 
+This work was granted access to the servers/HPC resources managed by CAMMA, IHU Strasbourg, Unistra Mesocentre, and GENCI-IDRIS [Grant 2021-AD011011638R3, 2021-AD011011638R4].
+                        </p>
+
+                        <h3>This study is evaluated, thanks to the medical and surgical experts:</h3>
+                        <center></center><iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSL6qw9cokBYoe_GbE21KeeXoo38EKnM-TI5fHaj1xJjxZEpUJR0UqMFsGHcwGnVJdeHGucle4vLaj9/pubhtml?gid=11688608&amp;single=true&amp;widget=true&amp;headers=false"></iframe></center>
+
+                        <!-- Repeat for each team member -->
+                        <div class="logos" style="padding-bottom: 50px; padding-top: 50px">
+                            <!-- Repeat for each logo -->
+                            <a href="https://mix.jianbojiao.com/"><img src="static/images/mix_group.png"
+                                                                       alt="mix_group"/></a>
+
+                            <a href="https://www.baskerville.ac.uk/"><img src="static/images/baskerville.svg"
+                                                                          alt="baskerville"/></a>
+                            <a href="https://www.birmingham.ac.uk/"><img
+                                    src="static/images/UoB_Crest_Logo_RGB_POS_Landscape.png"
+                                    alt="UOB"/></a>
+                            <a href="https://royalsociety.org/grants/short-industry-fellowships/"><img
+                                    src="static/images/royal.png" alt="royal"/></a>
+
+                            <!-- Repeat for other logos -->
+                        </div>
+                    </div>
+
+
+                    <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img
+                            alt="Creative Commons License" style="border-width:0"
+                            src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"/></a><br/>This work is licensed
+                    under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons
+                    Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+                    <br>
+                    <br>
+
+                    <p>
+                        This page was built using the <a
+                            href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic
+                        Project Page Template</a>.
+                        <!--                        You are free to borrow the of this website, we just ask that you link back to this page in the-->
+                        <!--                        footer. <br> This website is licensed under a <a rel="license"-->
+                        <!--                                                                         href="http://creativecommons.org/licenses/by-sa/4.0/"-->
+                        <!--                                                                         target="_blank">Creative-->
+                        <!--                        Commons Attribution-ShareAlike 4.0 International License</a>.-->
+                    </p>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+</footer>
+
+<!-- Statcounter tracking code -->
+
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+<!-- End of Statcounter Code -->
+
+</body>
+</html>
