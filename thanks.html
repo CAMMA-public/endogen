@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+    <!-- Replace the content tag with appropriate information -->
+    <meta name="description" content="Surgical Imagen">
+    <meta property="og:title" content="Surgical Imagen"/>
+    <meta property="og:description" content="Surgical Imagen"/>
+    <meta property="og:url" content="https://camma-public.github.io/surgicalimagen"/>
+
+
+    <meta name="twitter:title" content="Surgical Imagen">
+    <meta name="twitter:description" content="Surgical Imagen">
+    <meta name="keywords" content="Surgical Imagen">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Surgical Text-To-Image Generation</title>
+    <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="static/css/bulma.min.css">
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="static/css/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core/index.min.css"/>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+    <script defer src="static/js/fontawesome.all.min.js"></script>
+    <script src="static/js/bulma-carousel.min.js"></script>
+    <script src="static/js/bulma-slider.min.js"></script>
+    <script src="static/js/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core/index.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js"></script>
+    <title>Surgical Imagene Leaderboard</title>
+
+    <style>
+        #more_example {
+            margin-top: 50px;
+            width: 80rem;
+            max-width: 80vw;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            font-size: 2rem;
+            color: white;
+            background-image: url('./static/images/overall.gif');
+            background-size: cover;
+            padding-top: 12.25%;
+            padding-bottom: 12.25%
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            position: fixed; /* Fixed positioning */
+            top: 0; /* Stick to the top */
+            width: 100%; /* Full width */
+            z-index: 1000; /* Make sure it stays on top of other content */
+        }
+
+        .navbar a, .navbar h1 {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+        }
+
+        .navbar h1 {
+            margin: 0;
+            padding-left: 8px;
+        }
+
+        .navbar-right {
+            display: flex;
+        }
+
+        .hover-underline-animation {
+            display: inline-block;
+            position: relative;
+            color: #0087ca;
+        }
+
+        .hover-underline-animation::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #0087ca;
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+        }
+
+        .hover-underline-animation:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        .team-section {
+            background: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .team-section h2 {
+            font-size: 2em;
+        }
+
+        .member-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 10px;
+        }
+
+        .member {
+            flex: 0 0 30%; /* each member will take up 30% of the container width */
+            margin: 10px;
+            box-sizing: border-box;
+        }
+
+        .member img {
+            border-radius: 50%; /* Makes the images round */
+            width: 100px; /* Adjust as needed */
+            height: 100px; /* Adjust as needed */
+            margin-bottom: 10px;
+            display: block; /* Center image in its container */
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .member p {
+            margin: 5px 0;
+        }
+
+        .logos {
+            margin-top: 20px;
+        }
+
+        .logos img {
+            height: 100px; /* Adjust as needed */
+            margin: 0 10px;
+            vertical-align: middle;
+        }
+
+        @keyframes rotate3D {
+            0% {
+                transform: perspective(500px) rotateY(0deg);
+            }
+            100% {
+                transform: perspective(500px) rotateY(360deg);
+            }
+        }
+
+        .rotating-text-3d {
+            display: inline-block;
+            animation: rotate3D 5s linear infinite;
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+<div class="navbar">
+    <a style="font-size: 2rem"
+       href="#top">
+        <div class="rotating-text-3d"><b><i>Surgical Imagen</i></b></div>
+    </a>
+    <div class="navbar-right">
+        <a href="#example" class="hover-underline-animation">Example</a>
+        <a href="#survey" class="hover-underline-animation">Survey</a>
+        <a href="leaderboard.html" class="hover-underline-animation">Leaderboard</a>
+        <a href="#team" class="hover-underline-animation">Team</a>
+    </div>
+</div>
+
+    <h1 align="center">Leaderboard</h1>
+    <center><iframe align="center" width="1159" height="641" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSL6qw9cokBYoe_GbE21KeeXoo38EKnM-TI5fHaj1xJjxZEpUJR0UqMFsGHcwGnVJdeHGucle4vLaj9/pubhtml?gid=11688608&amp;single=true&amp;widget=true&amp;headers=false"></iframe></center>
+
+    <hr /> Not satisfied with your score? Can you beat the top score? Take the study again here !
+</body>
+</html>
