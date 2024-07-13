@@ -169,12 +169,47 @@
             display: inline-block;
             /*animation: rotate3D 5s linear infinite;*/
         }
+        
+        .toggle-div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+            font-family: Arial, sans-serif;
+        }
+        .toggle-div.active {
+            display: block;
+        }
+        .toggle-button {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .toggle-button button {
+            margin: 0 10px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
 
     </style>
 </head>
 
 
 <body>
+    
+    <script>
+        function showDiv(divId) {
+            // Hide all divs
+            var divs = document.getElementsByClassName('toggle-div');
+            for (var i = 0; i < divs.length; i++) {
+                divs[i].classList.remove('active');
+            }
+            // Show the selected div
+            document.getElementById(divId).classList.add('active');
+        }
+    </script>
 
     <div class="navbar" width="100%">
         <a style="font-size: 2rem"
@@ -195,9 +230,20 @@
         <div class="container is-max-desktop">
             <div class="columns is-centered">
                 <div class="column has-text-centered">
+                    <h1 align="center">Leaderboard</h1> <br />
+                
+                    <div class="toggle-button">
+                        <button onclick="showDiv('internal')">Internal</button>
+                        <button onclick="showDiv('external')">Global</button>
+                    </div>
 
-                    <div class="content">
-                        <h1 align="center">Leaderboard</h1> <hr />
+                    <div class="toggle-div active" id="internal">
+                        <h2 align="center">Internal Evaluation</h2> <hr />
+                        <iframe align="center" width="1159" height="510" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSL6qw9cokBYoe_GbE21KeeXoo38EKnM-TI5fHaj1xJjxZEpUJR0UqMFsGHcwGnVJdeHGucle4vLaj9/pubchart?oid=302752031&amp;format=interactive"></iframe>
+                    </div>
+
+                    <div class="toggle-div" id="external">
+                        <h2 align="center">External Evaluation</h2> <hr />
                         <iframe align="center" width="1159" height="510" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSL6qw9cokBYoe_GbE21KeeXoo38EKnM-TI5fHaj1xJjxZEpUJR0UqMFsGHcwGnVJdeHGucle4vLaj9/pubchart?oid=302752031&amp;format=interactive"></iframe>
                     </div>
                     
