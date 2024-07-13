@@ -179,16 +179,33 @@
         .toggle-div.active {
             display: block;
         }
-        .toggle-button {
-            display: block;
+        
+        .toggle-switch {
+            display: flex;
             justify-content: center;
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
-        .toggle-button button {
-            margin: 0 10px;
-            padding: 10px 20px;
+            align-items: center;
+            margin: 20px auto;
+            width: 120px;
+            background-color: #ddd;
+            border-radius: 25px;
+            position: relative;
             cursor: pointer;
+        }
+        .toggle-button {
+            width: 50%;
+            padding: 10px;
+            border-radius: 25px;
+            transition: background-color 0.3s;
+        }
+        .toggle-button.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .toggle-button:first-child {
+            border-radius: 25px 0 0 25px;
+        }
+        .toggle-button:last-child {
+            border-radius: 0 25px 25px 0;
         }
 
     </style>
@@ -197,15 +214,27 @@
 
 <body>
     
+    
     <script>
-        function showDiv(divId) {
-            // Hide all divs
-            var divs = document.getElementsByClassName('toggle-div');
-            for (var i = 0; i < divs.length; i++) {
-                divs[i].classList.remove('active');
+        function toggleDiv() {
+            // Get the div elements
+            var div1 = document.getElementById('internal');
+            var div2 = document.getElementById('global');
+            // Get the toggle buttons
+            var toggle1 = document.getElementById('toggle1');
+            var toggle2 = document.getElementById('toggle2');
+            // Toggle the active class
+            if (div1.classList.contains('active')) {
+                div1.classList.remove('active');
+                div2.classList.add('active');
+                toggle1.classList.remove('active');
+                toggle2.classList.add('active');
+            } else {
+                div1.classList.add('active');
+                div2.classList.remove('active');
+                toggle1.classList.add('active');
+                toggle2.classList.remove('active');
             }
-            // Show the selected div
-            document.getElementById(divId).classList.add('active');
         }
     </script>
 
@@ -228,11 +257,14 @@
         <div class="container is-max-desktop">
             <div class="columns is-centered">
                 <div class="column has-text-centered">
-                    <h1 align="center">Leaderboard</h1> <br />
-                
-                    <div class="toggle-button">
-                        <button onclick="showDiv('internal')">Internal</button>
-                        <button onclick="showDiv('external')">Global</button>
+                    <div class="conatiner">
+                        <h1 align="center">Leaderboard</h1> <br />
+                        
+                        <div class="toggle-switch" onclick="toggleDiv()">
+                            <div id="toggle1" class="toggle-button active">Internal</div>
+                            <div id="toggle2" class="toggle-button">Global</div>
+                        </div>
+                        
                     </div>
 
                     <div class="toggle-div active" id="internal">
@@ -240,7 +272,7 @@
                         <iframe align="center" width="1159" height="510" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSL6qw9cokBYoe_GbE21KeeXoo38EKnM-TI5fHaj1xJjxZEpUJR0UqMFsGHcwGnVJdeHGucle4vLaj9/pubchart?oid=302752031&amp;format=interactive"></iframe>
                     </div>
 
-                    <div class="toggle-div" id="external">
+                    <div class="toggle-div" id="global">
                         <h2 align="center">External Evaluation</h2> <hr />
                         <iframe align="center" width="1159" height="510" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSL6qw9cokBYoe_GbE21KeeXoo38EKnM-TI5fHaj1xJjxZEpUJR0UqMFsGHcwGnVJdeHGucle4vLaj9/pubchart?oid=302752031&amp;format=interactive"></iframe>
                     </div>
