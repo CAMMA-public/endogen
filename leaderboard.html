@@ -185,7 +185,7 @@
             justify-content: center;
             align-items: center;
             margin: 20px auto;
-            width: 120px;
+            width: 45%;
             background-color: #ddd;
             border-radius: 25px;
             position: relative;
@@ -202,10 +202,10 @@
             color: white;
         }
         .toggle-button:first-child {
-            border-radius: 25px 0 0 25px;
+            border-radius: 15px 0 0 15px;
         }
         .toggle-button:last-child {
-            border-radius: 0 25px 25px 0;
+            border-radius: 0 15px 15px 0;
         }
 
     </style>
@@ -261,19 +261,18 @@
                         <h1 align="center">Leaderboard</h1> <br />
                         
                         <div class="toggle-switch" onclick="toggleDiv()">
-                            <div id="toggle1" class="toggle-button active">Internal</div>
-                            <div id="toggle2" class="toggle-button">Global</div>
+                            <div id="toggle1" class="toggle-button active">Internal Evaluation</div>
+                            <div id="toggle2" class="toggle-button">Global Evaluation</div>
                         </div>
                         
                     </div>
 
-                    <div class="toggle-div active" id="internal">
-                        <h2 align="center">Internal Evaluation</h2> <hr />
+                    <div class="toggle-div active" id="internal"><br /><hr />
                         <iframe align="center" width="1159" height="510" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSL6qw9cokBYoe_GbE21KeeXoo38EKnM-TI5fHaj1xJjxZEpUJR0UqMFsGHcwGnVJdeHGucle4vLaj9/pubchart?oid=302752031&amp;format=interactive"></iframe>
                     </div>
 
                     <div class="toggle-div" id="global">
-                        <h2 align="center">External Evaluation</h2> <hr />
+                        <br /> <hr />
                         <iframe align="center" width="1159" height="510" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSL6qw9cokBYoe_GbE21KeeXoo38EKnM-TI5fHaj1xJjxZEpUJR0UqMFsGHcwGnVJdeHGucle4vLaj9/pubchart?oid=302752031&amp;format=interactive"></iframe>
                     </div>
                     
