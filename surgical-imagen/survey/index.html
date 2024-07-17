@@ -1,10 +1,67 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Redirect</title>
+    <script>
+        function redirectToRandomForm() {
+            // Define the Google Form links
+            const formLinks = [                
+                "https://forms.gle/3sH1CGSyQPHr28cR8",
+                "https://forms.gle/4adLndvRRcaJ3U5LA",
+                "https://forms.gle/Bj63zB7DZcfQzKtG8",
+                "https://forms.gle/8HMrDnPo6XCnMLkJ6",
+                "https://forms.gle/iB72dPDuG6tiYXQE6",
+                "https://forms.gle/AUvNPMc9uiMWVPBz6",
+                "https://forms.gle/ew8uF2KtWSnEhHne7",
+                "https://forms.gle/HBdCuQgMBbDQ1RvaA",
+                "https://forms.gle/5DeJq613smZUPDv8A",
+                "https://forms.gle/vjM6AaYwW727mHwD9"
+            ];
+
+            // Generate a random index to select a form link
+            const randomIndex = Math.floor(Math.random() * formLinks.length);
+
+            // Redirect to the randomly selected form link
+            window.location.href = formLinks[randomIndex];
+        }
+    </script>
+</head>
+<body onload="redirectToRandomForm()">
+    <h1>Redirecting...</h1>
+    <p>If you are not redirected automatically, <a id="manualRedirect" href="#">click here</a>.</p>
+    <script>
+        // In case the automatic redirection fails, provide a manual link
+        document.getElementById('manualRedirect').href = (Math.random() < 0.5) ?             
+            "https://forms.gle/3sH1CGSyQPHr28cR8",
+            "https://forms.gle/4adLndvRRcaJ3U5LA",
+            "https://forms.gle/Bj63zB7DZcfQzKtG8",
+            "https://forms.gle/8HMrDnPo6XCnMLkJ6",
+            "https://forms.gle/iB72dPDuG6tiYXQE6",
+            "https://forms.gle/AUvNPMc9uiMWVPBz6",
+            "https://forms.gle/ew8uF2KtWSnEhHne7",
+            "https://forms.gle/HBdCuQgMBbDQ1RvaA",
+            "https://forms.gle/5DeJq613smZUPDv8A",
+            "https://forms.gle/vjM6AaYwW727mHwD9"
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+<!--
+
+<!DOCTYPE html>
 <html>
 <head>
     <title>Surgical Generative AI Survery</title>
     <script>
         // Array of Google Forms URLs
-        var formURLS = [
+        var formURLs = [
             "https://forms.gle/3sH1CGSyQPHr28cR8",
             "https://forms.gle/4adLndvRRcaJ3U5LA",
             "https://forms.gle/Bj63zB7DZcfQzKtG8",
@@ -17,19 +74,7 @@
             "https://forms.gle/vjM6AaYwW727mHwD9"
             ];
 
-        // Randomly select a URL from the array
-        var randomURL = formURLs[Math.floor(Math.random() * formURLs.length)];
 
-        // Perform redirection
-        window.location.href = randomURL;
-    </script>
-</head>
-<body>
-    <p>If you are not redirected automatically, <a href="URL_TO_FALLBACK_FORM">click here</a>.</p>
-</body>
-
-    <!--
-    
         var formURLs = [
             "https://docs.google.com/forms/d/e/1FAIpQLSd3nrtPlbHlakR9_fj4O_OFE3jgkE8i-_on2b6sNuWwygHwjw/viewform?usp=sharing",
         		"https://docs.google.com/forms/d/e/1FAIpQLSf-xA6K7I-mNJISLn-WqKLbxsE_wqkxrGZBVFz1-c-6MRx0WQ/viewform?usp=sharing",
@@ -42,5 +87,18 @@
         		"https://docs.google.com/forms/d/e/1FAIpQLSeVQYS_SHau7yyydmQvszkfKGmhKR3J1fQSkYQ0NBOSqB4UhA/viewform?usp=sharing",
         		"https://docs.google.com/forms/d/e/1FAIpQLSco6-u5JEZaHj1VA_fA34gIveeKysYWCErp4CFZlE81WMfzsg/viewform?usp=sharing",
         ];
-    -->
+
+        // Randomly select a URL from the array
+        var randomURL = formURLs[Math.floor(Math.random() * formURLs.length)];
+
+        // Perform redirection
+        window.location.href = randomURL;
+    </script>
+</head>
+<body>
+    <p>If you are not redirected automatically, <a href="URL_TO_FALLBACK_FORM">click here</a>.</p>
+</body>
+
 </html>
+
+-->
