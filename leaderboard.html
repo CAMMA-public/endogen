@@ -213,7 +213,11 @@
         }
         .toggle-button:last-child {
             border-radius: 0 20px 20px 0;
-        }     
+        }   
+
+        .toggle-button span {
+            font-size: clamp(1rem, 1.5vw, 2rem);
+        }
         
 
     </style>
@@ -268,8 +272,8 @@
                     <div class="content">
                         <h1 align="center">Leaderboard</h1> <br />                        
                         <div class="toggle-switch" onclick="toggleDiv()">
-                            <div id="toggle1" class="toggle-button active">Initial Evaluation</div>
-                            <div id="toggle2" class="toggle-button">Global Evaluation</div>
+                            <div id="toggle1" class="toggle-button active"><span>Initial Evaluation</span></div>
+                            <div id="toggle2" class="toggle-button"><span>Global Evaluation</span></div>
                         </div>
                         <p>
                             <br /><b>Participants of the initial evaluation (taken before 17th July 2024) are invited to take the global evaluation using the same <a href="https://camma-public.github.io/endogen/surgical-imagen/survey" style="color:blue">link</a>.</b>
