@@ -174,6 +174,9 @@
         }
 
         .larger-contents {
+            position: relative;
+            display: none;
+            font-family: Arial, sans-serif;
             overflow-x: auto; /* Enable horizontal scrolling */
             overflow-y: hidden; /* Disable vertical scrolling */
             width: 100%; /* Adjust width as needed */
@@ -181,11 +184,11 @@
             background-color: blue;
             white-space: nowrap; /* Prevent wrapping */
         }
-
+/* 
          .larger-contents frames {
             border: none; /* Remove iframe border */
             display: block; /* Ensure iframe behaves like a block element */             
-        }
+        } */
 
     </style>
 </head>
@@ -662,11 +665,11 @@
         <div class="container">
             <h2 class="title is-3">Special Thanks</h2>            
             <div class="columns is-centered">  
-                <div class="larger-contents" style="white-space: nowrap; overflow: hidden;">
+                <div class="content">
                     <p>The authors acknowledge the following clinicians for their participation in filling the evaluation survey:</p>
-                </div>
-                <div class="larger-contents">                    
-                    <iframe align="center" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vR4v5xTrjIqKHdbrpb_-9Y6oVHQ8OTl8DMVk010JuAdBABfj0dB604OVdqPlaPbKDR8nKI3CFcdb-0N/pubchart?oid=1741363542&amp;format=interactive"></iframe>
+                    <div class="larger-contents">                    
+                        <iframe align="center" width="1200" height="500" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vR4v5xTrjIqKHdbrpb_-9Y6oVHQ8OTl8DMVk010JuAdBABfj0dB604OVdqPlaPbKDR8nKI3CFcdb-0N/pubchart?oid=1741363542&amp;format=interactive"></iframe>
+                    </div>
                 </div>
             </div>
         </div>
