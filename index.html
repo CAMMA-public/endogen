@@ -174,12 +174,12 @@
         }
 
         .larger-contents {
-            display: inline-block;
             overflow-x: auto; /* Enable horizontal scrolling */
             overflow-y: hidden; /* Disable vertical scrolling */
             width: 100%; /* Adjust width as needed */
             height: auto;
             background-color: blue;
+            white-space: nowrap; /* Prevent wrapping */
         }
 
          .larger-contents iframe {
@@ -664,7 +664,8 @@
             <p>The authors acknowledge the following clinicians for their participation in filling the evaluation survey:</p>
             <div class="columns is-centered">                
                 <div class="larger-contents">                    
-                    <iframe align="center" frameborder="0" scrolling="no" allowtransparency="true" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vR4v5xTrjIqKHdbrpb_-9Y6oVHQ8OTl8DMVk010JuAdBABfj0dB604OVdqPlaPbKDR8nKI3CFcdb-0N/pubchart?oid=1741363542&amp;format=interactive"></iframe>
+                    <iframe align="center" frameborder="0" scrolling="no" allowtransparency="true" id="contentIframe"  onload="resizeIframe()"
+                        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vR4v5xTrjIqKHdbrpb_-9Y6oVHQ8OTl8DMVk010JuAdBABfj0dB604OVdqPlaPbKDR8nKI3CFcdb-0N/pubchart?oid=1741363542&amp;format=interactive"></iframe>
                     <br />
                 </div>
             </div>
@@ -797,5 +798,13 @@ This work was granted access to the servers/HPC resources managed by CAMMA, IHU 
 
 <!-- End of Statcounter Code -->
 
+    
+    <script>
+        function resizeIframe() {
+            var iframe = document.getElementById('contentIframe');
+            iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+            iframe.style.width = iframe.contentWindow.document.body.scrollWidth + 'px';
+        }
+    </script>
 </body>
 </html>
