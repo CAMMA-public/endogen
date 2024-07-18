@@ -172,12 +172,19 @@
         
         .toggle-div {
             position: relative;
-            width: 100%;
             display: none;
             font-family: Arial, sans-serif;
+            overflow-x: auto; /* Enable horizontal scrolling */
+            overflow-y: hidden; /* Disable vertical scrolling */
+            width: 100%; /* Adjust width as needed */
+            height: auto;
         }
         .toggle-div.active {
             display: block;
+            overflow-x: auto; /* Enable horizontal scrolling */
+            overflow-y: hidden; /* Disable vertical scrolling */
+            width: 100%; /* Adjust width as needed */
+            height: auto;
         }
         
         .toggle-switch {
