@@ -183,6 +183,27 @@
             white-space: nowrap; /* Prevent wrapping */
         }
 
+	.project {
+	    display: grid;
+	    grid-template-columns: repeat(2, 1fr); /* Two equal columns */
+	    grid-auto-rows: 50vh; /* Fixed height for rows */
+	    width: 100vw; /* Full width of the viewport */
+	    height: 100vh; /* Full height of the viewport */
+	    gap: 0; /* No gap between children (optional) */
+	}
+	
+	/* Style for child divs */
+	.quarter {
+	    display: flex;
+	    justify-content: center;
+	    align-items: center;
+	    font-size: 24px;
+	    font-weight: bold;
+	    background-color: lightblue;
+	    border: 1px solid #ccc; /* Optional for visibility */
+	}
+	    
+
     </style>
 </head>
 
@@ -239,6 +260,73 @@
 </section>
 
 
+<!-- Teaser image -->
+
+<section class="hero teaser">
+    <div class="container is-max-desktop">
+        <div class="hero-body">
+            <img src="static/images/pipeline.gif" height="100%" width="auto">
+        </div>
+    </div>
+</section>
+
+	
+<!-- Paper abstract -->
+
+<section class="section hero is-light">
+    <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+	    <h2 class="title is-2">Research Projects</h2>
+
+	    <div class="project">
+	    <div class="quarter">
+	        <h3>Surgical Imagen</h3>
+	        <h5>Surgical Text-To-Image Generation</h5>
+		<div class="hero-body">
+	            <img src="static/images/pipeline.gif" height="100%" width="auto">
+	        </div>
+	    </div>
+		
+	    <div class="quarter">
+	        <h3>SimGen</h3>
+	        <h5>Simultaneous Image-Mask Generation</h5>
+		<div class="hero-body">
+	            <img src="static/images/pipeline.gif" height="100%" width="auto">
+	        </div>
+		<p>Intro <a href="">... Read more</a></p>
+	    </div>
+		
+	    <div class="quarter">
+	        <h3>CoSimGen</h3>
+	        <h5>Controllable Image-Mask Generation</h5>
+		<div class="hero-body">
+	            <img src="static/images/pipeline.gif" height="100%" width="auto">
+	        </div>
+	    </div>
+		
+	    <div class="quarter">
+	        <h3>Surgical Videogen</h3>
+	        <h5>Surgical Text-To-Video Generation</h5>
+		<div class="hero-body">
+	            <img src="static/images/pipeline.gif" height="100%" width="auto">
+	        </div>
+	    </div>
+	    </div>
+
+		
+            <div class="column is-four-fifths">
+                <h2 class="title is-3">Research Projects</h2>
+                <div class="content has-text-justified">
+                    More . . .
+                </div>
+		    
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End paper abstract -->
+
+	
 
 <!-- 	
 
@@ -356,32 +444,6 @@
 </section>
 
  -->
-<!-- Teaser image -->
-
-<section class="hero teaser">
-    <div class="container is-max-desktop">
-        <div class="hero-body">
-            <img src="static/images/pipeline.gif" height="100%" width="auto">
-        </div>
-    </div>
-</section>
-
-	
-<!-- Paper abstract -->
-
-<section class="section hero is-light">
-    <div class="container is-max-desktop">
-        <div class="columns is-centered has-text-centered">
-            <div class="column is-four-fifths">
-                <h2 class="title is-3">What is Surgical Imagen ?</h2>
-                <div class="content has-text-justified">
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- End paper abstract -->
 
 	
 
