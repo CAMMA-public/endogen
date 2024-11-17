@@ -215,16 +215,25 @@
             margin-bottom: 10px;
         }
         .grid-item a {
-            color: #03dbfc;
+            color: blue;
         }
         .grid-item a:hover {
-            color: #fcad03;
+            color: pink;
         }
 
 
 	    
 
     </style>
+		
+	<script>
+	    fetch('static/images/image_base64.txt')
+	        .then(response => response.text())
+	        .then(data => {
+	            var image_data = data;
+	        });
+	</script>
+
 </head>
 
 
@@ -300,14 +309,14 @@
 
 
 	
-<section class="section hero is-light" style="padding-top: 100px" id="thanks">
+<section class="section hero is-light" style="padding-top: 100px" id="research">
     <div class="hero-body">
         <div class="container is-max-desktop">
             <div class="columns is-centered has-text-centered">
                 <div class="column has-text-centered">
                     <div class="content is-centered has-text-centered">
                         <h1 align="center">Research Projects</h1>                        
-			<p><b>Some projects of Endogen .. .</b></p>                        
+			<p><b>Some projects of Endogen ...</b></p>                        
                     </div>    
 						 
 		    <div class="grid is-centered ">
@@ -323,15 +332,15 @@
 				<img src="static/images/pipeline.gif" alt="Project 2">
 				<p><b>Simultaneous Image-Mask Generation</b></p>
 				<p>Short description of project 2.</p>
-				<a href="project2.html">Learn more >></a>
+				<a href="project2.html">Learn more ..</a>
 			    </div>
 			    
 			    <div class="grid-item">
 				<h3 class="title is-3">CoSimGen</h3>
 				<img src="static/images/pipeline.gif" alt="Project 3">
-				<b>Controllable Image-Mask Generation</b>
+				<p><b>Controllable Image-Mask Generation</b></p>
 				<p>Short description of project 3.</p>
-				<a href="project2.html">Learn more >></a>
+				<a href="project2.html">Learn more ...</a>
 			    </div>
 			    
 			    <div class="grid-item">
@@ -339,16 +348,9 @@
 				<img src="static/images/pipeline.gif" alt="Project 2">
 				<p><b>Surgical Text-To-Video Generation</b></p>
 				<p>Short description of project 4.</p>
-				<a href="project2.html">Learn more >></a>
+				<a href="project2.html">Learn more ...</a>
 			    </div>
 			    
-			    <div class="grid-item">
-				<h2 class="title is-3">SimGen</h2>
-				<img src="static/images/pipeline.gif" alt="Project 2">
-				<h3 class="subtitle has-text-centered">Simultaneous Image-Mask Generation</h3>
-				<p>Short description of project 2.</p>
-				<a href="project2.html">Learn more</a>
-			    </div>
 			    <!-- Add more grid items here -->
 		    </div>
 			
@@ -356,49 +358,200 @@
             </div>
         </div>
     </div>
-    <p><nr /></p>
+    <p><hr /></p>
 </section>
 
+
+
+<section class="hero is-small" id="opportunities">
+	  <div class="hero-body">
+		<div class="container">
+		        <div class="columns is-centered">
+		            <div class="column is-8">
+		                <div class="content">
+		
+		                    <h2 class="title is-3">Our Team</h2>
+		                    <div class="member-container">
+		
+		
+		                        <div class="member">
+		                            <a href="https://nwoyecid.github.io/" target="_blank">
+		                                <img src="static/images/chinedu.jpg" alt="hao chen">
+		                                <p align="center">Chinedu Nwoye</p>
+		                            </a>
+		                        </div>
+		                        <div class="member">
+		                            <a href="#" target="_blank">
+		                                <img src="static/images/rupak.jpg" alt="yuqi hou">
+		                                <p align="center">Rupak Bose</p>
+		                            </a>
+		                        </div>
+		                        <div class="member">
+		                            <a href="#" target="_blank">
+		                                <img src="static/images/kareem.jpg" alt="chenyuan qu">
+		                                <p align="center">Kareem Elgohary</p>
+		                            </a>
+		                        </div>
+		                        <div class="member">
+		                            <a href="#"
+		                               target="_blank">
+		                                <img src="static/images/lorenzo.jpg" alt="Irene Testini">
+		                                <p align="center">Lorenzo Arboit</p>
+		                            </a>
+		                        </div>
+		                        <div class="member">
+		                            <a href="#" target="_blank">
+		                                <img src="static/images/giorgio.jpg" alt="Xiaohan Hong">
+		                                <p align="center">Giorgio Carlino</p>
+		                            </a>
+		                        </div>
+		                        <div class="member">
+		                            <a href="#" target="_blank">
+		                                <img src="static/images/joel.jpg" alt="jianbo">
+		                                <p align="center">Joel L Lavanchy</p>
+		                            </a>
+		                        </div>
+		                        
+		                        <div class="member">
+		                            <a href="#" target="_blank">
+		                                <img src="static/images/pietro.jpg" alt="jianbo">
+		                                <p align="center">Pietro Mascagni</p>
+		                            </a>
+		                        </div>
+		                        
+		                        <div class="member">
+		                            <a href="#" target="_blank">
+		                                <img src="static/images/nicolas.jpg" alt="jianbo">
+		                                <p align="center">Nicolas Padoy</p>
+		                            </a>
+		                        </div>
+		                    </div>
+				</div>
+			    </div>
+			</div>
+		</div>
+	  </div>
+	<hr />
+</section>
+
+
 	
+<section class="hero is-small" id="opportunities">
+    <div class="hero-body">
+        <div class="container is-centered">
+            <h2 class="title is-3">Opportunities</h2>
+            <div class="columns is-centered">
+                <div class="column is-four-fifths">
+                   Internship position ...
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+	
+<section class="hero is-light is-small" id="reference">
+    <div class="hero-body">
+        <div class="container is-centered">
+            <h2 class="title is-3">Citation</h2>
+            <div class="columns is-centered">
+                <div class="column is-four-fifths">
+                    <pre><code>@article{nwoye2024surgical,
+			  title={Surgical Text-to-Image Generation},
+			  author={Nwoye, Chinedu Innocent and Bose, Rupak and Elgohary, Kareem and Arboit, Lorenzo and Carlino, Giorgio and Lavanchy, Jo{\"e}l L and Mascagni, Pietro and Padoy, Nicolas},
+			  journal={arXiv preprint arXiv:2407.09230},
+			  year={2024}
+			}</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+	
+
+<footer class="footer" id="team">
+     <div class="container">
+        <div class="columns is-centered">
+            <div class="column is-8">
+                <div class="content"> 
+                    
+                    <h2 class="title is-3">Acknowledgement</h2>
+                    <div class="member-container">
+                        <p>
+                             This work was supported by French state funds managed within the Plan Investissements d’Avenir by the ANR under references: 
+			     National AI Chair AI4ORSafety [ANR-20-CHIA-0029-01], IHU Strasbourg [ANR-10-IAHU-02] and by BPI France [Project 5G-OR]. 
+			     This work was granted access to the servers/HPC resources managed by CAMMA, IHU Strasbourg, Unistra Mesocentre, and GENCI-IDRIS [Grant 2021-AD011011638R3, 2021-AD011011638R4].
+                        </p>
+                        <br /><hr /><br />
+                        
+                        <!-- Repeat for each team member -->
+                        <div class="logos" style="padding-bottom: 50px; padding-top: 50px">
+                            <!-- Repeat for each logo -->
+                            <a href="https://camma.unistra.fr/"><img src="static/images/camma.png"
+                                                                       alt="CAMMA"/></a>
+
+                            <a href="https://www.ihu-strasbourg.eu/"><img src="static/images/ihu.png"
+                                                                          alt="IHU"/></a>
+                            <a href="https://en.unistra.fr/"><img
+                                    src="static/images/unistra.png"
+                                    alt="Unistra"/></a>
+                        </div>
+                    </div>
+
+
+                    <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img
+                            alt="Creative Commons License" style="border-width:0"
+                            src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"/></a><br/>This work is licensed
+                    under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons
+                    Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+                    <br>
+                    <br>
+
+                    <p>
+                        This page was built using the <a
+                            href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic
+                        Project Page Template</a>.
+                    </p>
+
+                </div>
+	    </div>
+	</div>
+     </div>
+
+</footer>
+
+<!-- 	
 
 <section class="section hero is-light">
 
     <div class="hero-body">
 	<div class="container">	
-<!--     <div class="container is-max-desktop"> -->
-<!--         <div class="columns is-centered has-text-centered"> -->
 	    <h2 class="title is-2 is-centered">Research Projects</h2>
 
 	    <div class="project is-centered has-text-centered">
 		    <div class="quarter">
 		        <h3 class="title is-2">Surgical Imagen</h3>
 		        <p><b>Surgical Text-To-Image Generation</b></p>			
-<!-- 		        <img src="static/images/pipeline.gif" height="auto" width="auto"> -->
 		    </div>
 			
 		    <div class="quarter">
 		        <h3 class="title is-3">SimGen</h3>
-		        <h5 class="subtitle has-text-centered">Simultaneous Image-Mask Generation</h5>
-<!-- 			<div class="">
-		            <img src="static/images/pipeline.gif" height="100%" width="auto">
-		        </div> -->
+
 			<p>Intro <a href="">... Read more</a></p>
 		    </div>
 			
 		    <div class="quarter">
 		        <h3 class="title is-3">CoSimGen</h3>
 		        <h5 class="subtitle has-text-centered"></h5>
-<!-- 			<div class="">
-		            <img src="static/images/pipeline.gif" height="100%" width="auto">
-		        </div> -->
+
 		    </div>
 			
 		    <div class="quarter">
 		        <h3 class="title is-3"></h3>
-<!-- 		        <h5 class="subtitle has-text-centered">Surgical Text-To-Video Generation</h5>
-			<div class="">
-		            <img src="static/images/pipeline.gif" height="100%" width="auto">
-		        </div> -->
+
 		    </div>
 		    
 		    <div class="quarter">
@@ -409,7 +562,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 <!-- End paper abstract -->
 
 	
@@ -802,15 +955,6 @@
      -->
     
 
-<script>
-    fetch('static/images/image_base64.txt')
-        .then(response => response.text())
-        .then(data => {
-            var image_data = data;
-        });
-</script>
-
-<hr />
 <!-- 
 <section class="hero is-small is-light" id="survey">
     <div class="hero-body">
@@ -886,159 +1030,6 @@
     
      -->
 
-<footer class="footer" id="team">
-    <div class="container">
-        <div class="columns is-centered">
-            <div class="column is-8">
-                <div class="content">
-
-                    <h2 class="title is-3">Our Team</h2>
-                    <div class="member-container">
-
-
-                        <div class="member">
-                            <a href="https://nwoyecid.github.io/" target="_blank">
-                                <img src="static/images/chinedu.jpg" alt="hao chen">
-                                <p align="center">Chinedu Nwoye</p>
-                            </a>
-                        </div>
-                        <div class="member">
-                            <a href="#" target="_blank">
-                                <img src="static/images/rupak.jpg" alt="yuqi hou">
-                                <p align="center">Rupak Bose</p>
-                            </a>
-                        </div>
-                        <div class="member">
-                            <a href="#" target="_blank">
-                                <img src="static/images/kareem.jpg" alt="chenyuan qu">
-                                <p align="center">Kareem Elgohary</p>
-                            </a>
-                        </div>
-                        <div class="member">
-                            <a href="#"
-                               target="_blank">
-                                <img src="static/images/lorenzo.jpg" alt="Irene Testini">
-                                <p align="center">Lorenzo Arboit</p>
-                            </a>
-                        </div>
-                        <div class="member">
-                            <a href="#" target="_blank">
-                                <img src="static/images/giorgio.jpg" alt="Xiaohan Hong">
-                                <p align="center">Giorgio Carlino</p>
-                            </a>
-                        </div>
-                        <div class="member">
-                            <a href="#" target="_blank">
-                                <img src="static/images/joel.jpg" alt="jianbo">
-                                <p align="center">Joel L Lavanchy</p>
-                            </a>
-                        </div>
-                        
-                        <div class="member">
-                            <a href="#" target="_blank">
-                                <img src="static/images/pietro.jpg" alt="jianbo">
-                                <p align="center">Pietro Mascagni</p>
-                            </a>
-                        </div>
-                        
-                        <div class="member">
-                            <a href="#" target="_blank">
-                                <img src="static/images/nicolas.jpg" alt="jianbo">
-                                <p align="center">Nicolas Padoy</p>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <h2 class="title is-3">Acknowledgement</h2>
-                    <div class="member-container">
-                        <p>
-                            This work was supported by French state funds managed within the Plan Investissements d’Avenir by the ANR under references: National AI Chair AI4ORSafety [ANR-20-CHIA-0029-01], IHU Strasbourg [ANR-10-IAHU-02] and by BPI France [Project 5G-OR]. 
-This work was granted access to the servers/HPC resources managed by CAMMA, IHU Strasbourg, Unistra Mesocentre, and GENCI-IDRIS [Grant 2021-AD011011638R3, 2021-AD011011638R4].
-                        </p>
-                        <br /><hr /><br />
-                        
-                        <!-- Repeat for each team member -->
-                        <div class="logos" style="padding-bottom: 50px; padding-top: 50px">
-                            <!-- Repeat for each logo -->
-                            <a href="https://camma.unistra.fr/"><img src="static/images/camma.png"
-                                                                       alt="CAMMA"/></a>
-
-                            <a href="https://www.ihu-strasbourg.eu/"><img src="static/images/ihu.png"
-                                                                          alt="IHU"/></a>
-                            <a href="https://en.unistra.fr/"><img
-                                    src="static/images/unistra.png"
-                                    alt="Unistra"/></a>
-
-                            <!-- Repeat for other logos -->
-                        </div>
-                    </div>
-
-
-                    <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img
-                            alt="Creative Commons License" style="border-width:0"
-                            src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"/></a><br/>This work is licensed
-                    under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons
-                    Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
-                    <br>
-                    <br>
-
-                    <p>
-                        This page was built using the <a
-                            href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic
-                        Project Page Template</a>.
-                        <!--                        You are free to borrow the of this website, we just ask that you link back to this page in the-->
-                        <!--                        footer. <br> This website is licensed under a <a rel="license"-->
-                        <!--                                                                         href="http://creativecommons.org/licenses/by-sa/4.0/"-->
-                        <!--                                                                         target="_blank">Creative-->
-                        <!--                        Commons Attribution-ShareAlike 4.0 International License</a>.-->
-                    </p>
-
-                </div>
-
-
-            </div>
-        </div>
-    </div>
-
-
-
-
-	
-<section class="hero is-small" id="opportunities">
-    <div class="hero-body">
-        <div class="container">
-            <h2 class="title is-3">Opportunities</h2>
-            <div class="columns is-centered">
-                <div class="column is-four-fifths">
-                   Internship position ...
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-	
-<section class="hero is-small" id="reference">
-    <div class="hero-body">
-        <div class="container">
-            <h2 class="title is-3">Citation</h2>
-            <div class="columns is-centered">
-                <div class="column is-four-fifths">
-                    <pre><code>@article{nwoye2024surgical,
-			  title={Surgical Text-to-Image Generation},
-			  author={Nwoye, Chinedu Innocent and Bose, Rupak and Elgohary, Kareem and Arboit, Lorenzo and Carlino, Giorgio and Lavanchy, Jo{\"e}l L and Mascagni, Pietro and Padoy, Nicolas},
-			  journal={arXiv preprint arXiv:2407.09230},
-			  year={2024}
-			}</code></pre>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-</footer>
 
 <!-- Statcounter tracking code -->
 
