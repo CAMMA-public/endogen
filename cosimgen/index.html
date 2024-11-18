@@ -1,0 +1,370 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+    <!-- Replace the content tag with appropriate information -->
+    <meta name="description" content="Endogen">
+    <meta property="og:title" content="Endogen"/>
+    <meta property="og:description" content="Endogen"/>
+    <meta property="og:url" content="https://camma-public.github.io/endogen"/>
+
+
+    <meta name="twitter:title" content="Endogen">
+    <meta name="twitter:description" content="Endogen">
+    <meta name="keywords" content="Endogen">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <title>Endogen</title>
+    <link rel="icon" type="image/x-icon" href="../static/images/favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="../static/css/bulma.min.css">
+    <link rel="stylesheet" href="../static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="../static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="../static/css/fontawesome.all.min.css">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="../static/css/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core/index.min.css"/>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+    <script defer src="../static/js/fontawesome.all.min.js"></script>
+    <script src="../static/js/bulma-carousel.min.js"></script>
+    <script src="../static/js/bulma-slider.min.js"></script>
+    <script src="../static/js/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core/index.min.js"></script>
+
+    <script src="../static/js/video_block.js"></script>
+    <style>
+        #more_example {
+            margin-top: 50px;
+            width: 80rem;
+            max-width: 80vw;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            font-size: 2rem;
+            color: white;
+            background-image: url('./../static/images/overall.gif');
+            background-size: cover;
+            padding-top: 12.25%;
+            padding-bottom: 12.25%
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            position: fixed; /* Fixed positioning */
+            top: 0; /* Stick to the top */
+            width: 100%; /* Full width */
+            z-index: 1000; /* Make sure it stays on top of other content */
+        }
+
+        .navbar a, .navbar h1 {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+        }
+
+        .navbar h1 {
+            margin: 0;
+            padding-left: 8px;
+        }
+
+        .navbar-right {
+            display: flex;
+            flex-direction: row-reverse;
+            flex-flow: row wrap;
+        }
+
+        .hover-underline-animation {
+            display: inline-block;
+            position: relative;
+            color: #0087ca;
+        }
+
+        .hover-underline-animation::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #0087ca;
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+        }
+
+        .hover-underline-animation:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        .team-section {
+            background: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .team-section h2 {
+            font-size: 2em;
+        }
+
+        .member-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 10px;
+        }
+
+        .member {
+            flex: 0 0 30%; /* each member will take up 30% of the container width */
+            margin: 10px;
+            box-sizing: border-box;
+        }
+
+        .member img {
+            border-radius: 50%; /* Makes the images round */
+            width: 100px; /* Adjust as needed */
+            height: 100px; /* Adjust as needed */
+            margin-bottom: 10px;
+            display: block; /* Center image in its container */
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .member p {
+            margin: 5px 0;
+        }
+
+        .logos {
+            margin-top: 20px;
+        }
+
+        .logos img {
+            height: 50px; /* Adjust as needed */
+            margin: 0 10px;
+            vertical-align: middle;
+        }
+
+        @keyframes rotate3D {
+            0% {
+                transform: perspective(500px) rotateY(0deg);
+            }
+            100% {
+                transform: perspective(500px) rotateY(360deg);
+            }
+        }
+
+        .rotating-text-3d {
+            display: inline-block;
+            /*animation: rotate3D 5s linear infinite;*/
+        }
+
+        .survey {
+          float: right;
+        }
+
+        .larger-contents {
+            position: relative;
+            font-family: Arial, sans-serif;
+            overflow-x: auto; /* Enable horizontal scrolling */
+            overflow-y: hidden; /* Disable vertical scrolling */
+            width: 100%; /* Adjust width as needed */
+            height: auto;
+            white-space: nowrap; /* Prevent wrapping */
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+<div class="navbar">
+    <a style="font-size: 2rem"
+       href="#top">
+        <div class="rotating-text-3d"><b><i><a href="..">Endogen</a></i></b></div>
+    </a>
+    <div class="navbar-right">
+        <a href="#abstract" class="hover-underline-animation">Abstract</a>
+        <a href="#example" class="hover-underline-animation">Results</a>
+        <a href="#survey" class="hover-underline-animation">Survey</a>
+        <a href="#leaderboard" class="hover-underline-animation">Leaderboard</a>
+    </div>
+</div>
+
+
+<section class="hero" style="padding-top: 100px">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered">
+                <div class="column has-text-centered">
+
+                    <!--<p>Endogen is to revolutionize surgical data creation by bringing an unprecedented level of realism to medical professionals, researchers, and learners worldwide. We are dedicated to creating a cutting-edge AI generative model that crafts surgical data with unparalleled precision.</p>-->
+
+                    <div class="content">
+                        <h1 class="title is-1 publication-title"><span><i> </i></span>Controllable Surgical Dataset Generation</h1>
+<!--                         <div class="is-size-5 publication-authors">
+                            <span class="author-block"><a href="https://nwoyecid.github.io/" target="_blank">Chinedu Nwoye</a>,</span>
+                            <span class="author-block"><a href="https://www.linkedin.com/in/boserupak1/?originalSubdomain=ee" target="_blank">Rupak Bose</a></span>,
+                            <span class="author-block"><a href="https://www.linkedin.com/in/karimelgohary/?originalSubdomain=eg" target="_blank">Kareem Elgohary</a></span>,
+                            <span class="author-block"><a href="https://www.linkedin.com/in/lorenzoarboit/?originalSubdomain=fr" target="_blank">Lorenzo Arboit</a></span>,
+                            <span class="author-block"><a href="https://www.linkedin.com/in/giorgio-carlino-b85506179/?originalSubdomain=it" target="_blank">Giorgio Carlino</a></span>,
+                            <span class="author-block"><a href="https://scholar.google.com/citations?user=DuYFrSUAAAAJ&hl=en" target="_blank">Joel Lavanchy</a></span>,
+                            <span class="author-block"><a href="https://www.researchgate.net/profile/Pietro-Mascagni" target="_blank">Pietro Mascagni</a></span>,
+                            <span class="author-block"><a href="https://camma.unistra.fr/npadoy/" target="_blank">Nicolas Padoy</a></span>
+                        </div> -->
+
+
+                        <div class="is-size-5 publication-authors">
+                            <b><span class="author-block"><a href="https://camma.unistra.fr" target="_blank">Research Group CAMMA</a>, <a href="#">University of Strasbourg</a></span></b>
+
+                            <!--<div style="display: flex; justify-content: space-around">
+                                <span class="eql-cntrb" style="font-size: 1.25rem!important"><br><small><a href="https://cvpr.thecvf.com/">The IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 2024</a><p
+                                        style="color:#800519"><b>(Oral Presentation)</b></p></small></span>
+                            </div>-->
+                        </div>
+
+
+                        <div class="column has-text-centered">
+                            <div class="publication-links">
+                              No Contents Yet.
+                                
+                                <!-- Arxiv PDF link -->
+<!--                                 <span class="link-block">
+                                            <a href="#"
+                                               target="_blank"
+                                               class="external-link button is-normal is-rounded is-dark">
+                                            <span class="icon">
+                                              <i class="fas fa-file-pdf"></i>
+                                            </span>
+                                            <span>Research Paper</span>
+                                          </a>
+                                        </span> -->
+
+                                <!-- Supplementary PDF link -->
+<!--                                 <span class="link-block">
+                                          <a href="#"
+                                             target="_blank"
+                                             class="external-link button is-normal is-rounded is-dark">
+                                          <span class="icon">
+                                            <i class="fas fa-file-pdf"></i>
+                                          </span>
+                                          <span>Supplementary</span>
+                                        </a>
+                                      </span> -->
+                                
+<!--                                 <span class="link-block">
+                                            <a href="https://arxiv.org/abs/2407.09230" target="_blank"
+                                               class="external-link button is-normal is-rounded is-dark">
+                                            <span class="icon">
+                                              <i class="ai ai-arxiv"></i>
+                                            </span>
+                                            <span>arXiv</span>
+                                          </a>
+                                        </span> -->
+
+                                <!--
+                                <span class="link-block">
+                                            <a href="#survey"
+                                               class="button is-normal is-rounded is-dark">
+                                            <span class="icon">
+                                              <i class="fa fa-archive"></i>
+                                            </span>
+                                            <span>Survey</span>
+                                          </a>
+                                        </span>
+
+                                <span class="link-block">
+                                        <a href="#"
+                                           target="_blank"
+                                           class="external-link button is-normal is-rounded is-dark">
+                                        <span> Leaderboard </span>
+                                      </a>
+                                    </span>
+                                -->
+
+                                <!-- Github link -->
+<!--                                 <span class="link-block">
+                                        <a href="#"
+                                           target="_blank"
+                                           class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                          <i class="fab fa-github"></i>
+                                        </span>
+                                        <span>Code</span>
+                                      </a>
+                                    </span> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+    
+
+<footer class="footer" id="team">
+    <div class="container">
+        <div class="columns is-centered">
+            <div class="column is-8">
+                <div class="content">
+
+                    <h2 class="title is-3">Acknowledgement</h2>
+                    <div class="member-container">
+                        <p>
+                            This work was supported by French state funds managed within the Plan Investissements d’Avenir by the ANR under references: National AI Chair AI4ORSafety [ANR-20-CHIA-0029-01], IHU Strasbourg [ANR-10-IAHU-02] and by BPI France [Project 5G-OR]. 
+This work was granted access to the servers/HPC resources managed by CAMMA, IHU Strasbourg, Unistra Mesocentre, and GENCI-IDRIS [Grant 2021-AD011011638R3, 2021-AD011011638R4].
+                        </p>
+                        <br /><hr /><br />
+                        
+                        <!-- Repeat for each team member -->
+                        <div class="logos" style="padding-bottom: 50px; padding-top: 50px">
+                            <!-- Repeat for each logo -->
+                            <a href="https://camma.unistra.fr/"><img src="../static/images/camma.png"
+                                                                       alt="CAMMA"/></a>
+
+                            <a href="https://www.ihu-strasbourg.eu/"><img src="../static/images/ihu.png"
+                                                                          alt="IHU"/></a>
+                            <a href="https://en.unistra.fr/"><img
+                                    src="../static/images/unistra.png"
+                                    alt="Unistra"/></a>
+
+                            <!-- Repeat for other logos -->
+                        </div>
+                    </div>
+
+                    <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img
+                            alt="Creative Commons License" style="border-width:0"
+                            src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"/></a><br/>This work is licensed
+                    under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons
+                    Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+                    <br>
+                    <br>
+                    <p>
+                        This page was built using the <a
+                            href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic
+                        Project Page Template</a>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</footer>
+
+</body>
+</html>
